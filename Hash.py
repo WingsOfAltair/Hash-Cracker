@@ -192,12 +192,12 @@ if option == '--online':
           else: print ('[-] site: %s\t\t\tPassword: Not found\n' % site)
         except urllib2.URLError: print ('[+] site: %s \t\t\t[+] Error: seems to be down' % site)
       cloudcracker()
-    except KeyboardInterrupt: print ('\nTerminated by user ...')
+    except KeyboardInterrupt: print ('\nHash Cracking Terminated by User ...')
    
 elif option == '--offline':
   try:
     def offline():
-      print ('[+] This opertaion will take some time, be patient ...')
+      print ('[+] This opertaion will take some time, please be patient while awaiting results ...')
       dictionary = sys.argv[3]
       dic = {}
       shooter = 0
@@ -214,10 +214,10 @@ elif option == '--offline':
             spent = stop - start
             print ('\n[-] Hash: %s\t\tData: %s\t\tTime: %.f seconds' % (dic[k], k, spent))
             shooter += 1
-        if shooter == 0:  print ("\n[*]Password not found in [%s] try the online cracker\n" % dictionary)
+        if shooter == 0:  print ("\n[*]Password was not found in [%s]. Try the online hash cracker option.\n" % dictionary)
         f.close()
-      except IOError: print ('\n[*] Erorr: %s doesn\'t exsit \n' % dictionary)
+      except IOError: print ('\n[*] Error: %s doesn\'t exist.\n' % dictionary)
     offline()
-  except KeyboardInterrupt: print ('\nTerminated by user ...')
+  except KeyboardInterrupt: print ('\nHash Cracking Terminated by User ...')
  
 else: pass
